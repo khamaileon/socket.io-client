@@ -2250,7 +2250,7 @@ var io = ('undefined' === typeof module ? {} : module.exports);
 
       case 'ack':
         if (this.acks[packet.ackId]) {
-          this.acks[packet.ackId].apply(this, packet.args);
+          this.acks[packet.ackId](packet.args);
           delete this.acks[packet.ackId];
         }
         break;
